@@ -1,0 +1,234 @@
+
+#mdccovertabs {
+    height: 760px;
+    margin: 10px auto;
+}
+#mdccovertabs, #mdccovertabs #tabs ul, #mdccovertabs .fwbig-box {
+    min-width: 975px;
+    width: 975px;
+}
+#mdccovertabs .mdccovercaption {
+    font-size: 12px;
+    line-height: 11px;
+}
+#mdccover #tabs {
+    border: 0 none;
+    margin: auto 4px;
+    padding: 0;
+}
+#mdccovertabs .ui-tabs .ui-tabs-panel, #mdccovertabs .ui-tabs .ui-tabs-nav, #mdccovertabs .ui-tabs .ui-tabs-nav li {
+}
+#mdccovertabs #tabs ul {
+    clear: both;
+    margin: 0;
+}
+#mdccovertabs #tabs li {
+    border-left: 1px solid white;
+    border-right: 1px solid black;
+    display: block;
+    float: left;
+    height: 135px;
+    margin: 4px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: right;
+    width: 160px;
+}
+#mdccovertabs #tabs a {
+    font-size: 14px;
+    height: 74px;
+    padding: 0;
+    text-align: right;
+    text-transform: uppercase;
+    white-space: normal;
+    width: 148px;
+}
+#mdccovertabs #tabs div {
+    margin-bottom: 10px;
+}
+
+#mdccovertabs .tabs-active {
+    border-left: 0 solid #FFFFFF;
+    color: #212121;
+    cursor: pointer;
+    font-weight: bold;
+}
+#mdccovertabs .tabs-active a, #mdccovertabs .tabs-active a:link, #mdccovertabs .tabs-active a:visited {
+    color: #212121;
+    display: block;
+    text-decoration: none;
+}
+#mdccovertabs #tabs a {
+    border: 0 none;
+    margin: 0;
+}
+
+.fwbig-boxtxt {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 20px;
+    height: 88px;
+    left: 0;
+    line-height: 16px;
+    margin-top: 504px;
+    opacity: 0.7;
+    padding: 8px 8px 0 0;
+    position: absolute;
+    text-align: right;
+    text-transform: uppercase;
+    width: 1004px;
+}
+.fwbig-boxtxt a {
+    color: #000000;
+}
+.fwbig-boxtxt a:hover, .fw-box a:hover {
+    color: red;
+    text-decoration: none;
+}
+.fwbig-box {
+    border-top: 1px solid #FFFFFF;
+    clear: both;
+    color: #777777;
+    display: block;
+    height: 600px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+.fwbig-box img, .fwbig-box {
+    float: left;
+}
+
+
+.creditboxtop {
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    height: 41px;
+    left: 0;
+    line-height: 12px;
+    margin: 0;
+    padding: 4px 8px 0 0;
+    position: absolute;
+    text-align: right;
+    text-transform: uppercase;
+    top: 90px;
+    width: 152px;
+}
+
+.creditboxtop a {
+    color: #FFFFFF;
+}
+.creditboxtop a:hover {
+    color: white;
+}
+
+#index_main{margin:0 auto;width:970px}
+
+.modelshow{width:980px;height:45px;line-height:45px;margin: 5 0 0 2px;border-top:2px solid #666666;padding-top: 7px;}
+
+.modelshow_l{float:left;}
+
+.modelshow_l h2 {
+	height:50px;line-height:50px;
+	font-size:21px;
+	font-weight:700;
+  color: #333333;
+  width:600px
+}
+.modelshow_l h2 span{font-weight:normal;padding-left:10px;color: #999;}
+
+.modelshow_l2{float:left;height:50px;line-height:50px;display:inline-block;cursor: pointer;font-size:14px}
+.modelshow_l2 img{margin-top:20px}
+.modelshow_l2 a:hover{color:#999}
+
+#fwlistbox {
+	margin-top:10px;
+  background: url("../../../static/image/common/a-down.gif") no-repeat scroll 97% 50% white;
+  border: 1px solid #CCCCCC;
+  color: #333333;
+  display: block;
+  height: auto;
+  padding: 5px;
+  text-align: left;
+  width: 250px;
+}
+
+/* 首页行业标签 begin */
+.modelshow_r {
+    float: right;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 8px;
+    vertical-align: top;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.mark {
+    height: 24px;
+    display: block;
+    line-height: 22px;
+    width: 72px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    zoom: 1;
+    margin-left: 5px;
+    float: left;
+}
+
+.mark:hover {
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    color: #fff;
+}
+
+.mark span {
+    height: 1px;
+    line-height: normal;
+    display: block;
+    border: #fff solid;
+    border-width: 0 1px;
+    overflow: hidden;
+}
+
+.c66dfff-bg {
+    background: #66dfff;
+}
+
+.cf09-bg {
+    background: #f09;
+}
+
+.c9c0-bg {
+    background: #9c0;
+}
+
+.cfc0-bg {
+    background: #fc0;
+}
+
+.c204363-bg {
+    background: #204363;
+}
+
+.c653366-bg {
+    background: #653366;
+}
+
+.cc00-bg {
+    background: #c00;
+}
+
+.cf60-bg {
+    background: #f60;
+}
+
+.cc7c7c7-bg {
+    background: #c7c7c7;
+}
+/* 首页行业标签 end */

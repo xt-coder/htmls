@@ -1,0 +1,103 @@
+.post-area {
+    height: 60px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.post-area .area-mark {
+    float: right;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+}
+
+.post-area .area-mark a {
+    width: 80px;
+    height: 49px;
+    background: url(http://www.imodel.cc/static/image/nav.jpg) no-repeat;
+    position: relative;
+    top: 0;
+    float: left;
+    margin-left: 10px;
+}
+
+.post-area .area-mark .active,.post-area .area-mark a.active:hover {
+    top: -51px;
+    height: 106px;
+}
+
+.post-area .area-mark .hover {
+    top: -51px;
+    height: 100px;
+}/*,.post-area a:hover*/
+.post-area .area-mark .area-20 {
+}
+
+.post-area .area-mark .area-21 {
+    background-position: -81px 0;
+}
+
+.post-area .area-mark .area-22 {
+    background-position: -327px 0;
+}
+
+.post-area .area-mark .area-23 {
+    background-position: -409px 0;
+}
+
+.post-area .area-mark .area-100 {
+    background-position: -163px 0;
+}
+
+.post-area .area-mark .area-101 {
+    background-position: -245px 0;
+}
+
+
+
+.post-area .area-mark .area-13 {
+    background-position: -326px 0;
+}
+
+.post-area .area-mark .area-1 {
+    background-position: -408px 0;
+}
+
+.post-area .area-mark .area-53 {
+    background-position: -490px 0;
+}
+
+.post-area .area-mark .area-71 {
+    background-position: -571px 0;
+}
+
+.post-area .area-mark .area-94 {
+    background-position: -653px 0;
+}
+
+/* 专区颜色 begin */
+.area-color-20 {
+    color: #0cf;
+}
+
+.area-color-21 {
+    color: #f09;
+}
+
+.area-color-22 {
+    color: #8400DD;
+}
+
+.area-color-23 {
+    color: #FE1100;
+}
+
+.area-color-100 {
+    color: #9c0;
+}
+
+.area-color-101 {
+    color: #fc0;
+}
+
