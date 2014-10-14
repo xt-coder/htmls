@@ -1,0 +1,18 @@
+.xiazai{width:100%;height:85px;background:#dadada;
+        background: -moz-linear-gradient(top, rgba(250, 250, 250, 1), rgba(224, 224, 224, 1));
+        background: -webkit-gradient(linear,top,from(rgba(250, 250, 250, 1)),to(rgba(224, 224, 224, 1)));
+        background: -webkit-linear-gradient(top, rgba(250, 250, 250, 1), rgba(224, 224, 224, 1));
+        background: -o-linear-gradient(top, rgba(250, 250, 250, 1), rgba(224, 224, 224, 1));
+        border:0;
+        overflow:hidden;}
+
+.xiazai_left{ height:85px; float: left; margin-top:4px; padding-right:10px; padding-left:2px; overflow:hidden;}
+.xiazai_right{ height:58px; float: right; margin-top:25px; background: url("top_right.png") no-repeat; text-align: center; line-height:28px; width:51px;font-size: 1.4em;text-shadow:-1px 0 #e2e2e2,0 1px #e2e2e2,1px 0 #e2e2e2,0 -1px #e2e2e2; margin-right:10px;}
+.xiazai_logo{ height:85px; float: left; margin-top:14px ;
+}
+
+.xiazai_right a{ color:#333}
+.xiazai_right a:hover{ color:#333}
+.xiazai_wen{  height:65px; float:left; padding-left:10px; padding-top:17px;}
+.xiazai_wen p{ padding-bottom:3px;font-size: 1.2em;text-shadow:-1px 0 #e2e2e2,0 1px #e2e2e2,1px 0 #e2e2e2,0 -1px #e2e2e2;}
+xiazai_right{ height:58px; float: left; margin-top:25px;}
