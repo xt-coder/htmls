@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>懒人模板-中国第一专业手机门户触屏版自适应html5手机网站模板-http://www.lanrenmb.com/shenghuofuwu/menhu/</title>
+<meta name="keywords" content="扎堆9月 IFA 2014发布会汇总,三星GALAXY Note4">
+<meta name="description" content="IFA2014德国柏林国际消费电子展（theInternationaleFunkausstellung）将于北京时间9月6日到11日举行。在此之前，三星">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0,  maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!-- for apple -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<!-- css -->
+<link rel="stylesheet" href="../touch/app/css/index.css">
+<link rel="stylesheet" href="../touch/css/newstyle.css">
+<script type="text/javascript" src="../js/jquery144p.js"></script>
+<script type="text/javascript" src="../touch/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="../../pic.cnmo-img.com.cn/oddjs/m/detail.js"></script>
+</head>
+
+<!--[if IE]>
+<script src="../../topic.cnmo.com/active/11/zt_topic_head/html5.js"></script>
+<![endif]-->
+<body>
+
+<input type="hidden"  id="address" value="手机中国山西网友" />
+<input type="hidden"  id="articleId" value="428517"/>
+<input type="hidden"  id="lastCommentId" value="198172" />
+
+<script type="text/javascript">
+
+function trim(str)
+{ //删除左右两端的空格
+    return str.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+function filterBlank(content)
+{
+	return trim(content);
+}
+
+function filterScript(content)
+{
+	content = content.replace(/</g, "&lt;");
+	content = content.replace(/>/g, "&gt;");
+
+	return content;
+}
+    /**
+     * 插入一条新的评论以后，将评论插入所有评论头部
+     */
+    function insertComment(uname, content)
+    {
+    	
+        var handler = document.getElementById("comments");
+        var address = document.getElementById("address").value;
+
+        content = filterScript(content);
+        if(uname && uname.length!=0){
+        	var nickname = uname;
+        }else{
+        	var nickname =  address;
+        }
+
+        var commentDiv = "\
+       	 	<div class='commnetoDiv'>\
+   		 		<header class='c1Tit'>\
+   		 			<span class='r'>" + nickname + "</span>\
+   		 			<span class='rightDate'>刚刚</span>\
+   			 	</header>\
+    			<article class='commentTxt-p'>\
+        			<p>" + content + "</p>\
+    			</article>\
+			</div>";
+
+        handler.innerHTML = commentDiv + handler.innerHTML;
+    }
+
+    function displayMoreCommentsBar()
+    {
+        document.getElementById("lookCommentsMore").style.display = "block";
+    }
+
+    /**
+     * 当添加完一条评论后将评论总数加1
+     */
+    function addCommentsTotal()
+    {
+        var totalHandler = document.getElementsByName("commentsTotal");
+        var commentsTotal = totalHandler[0].innerHTML;
+
+        commentsTotal = parseInt(commentsTotal) + 1;
+
+        for(var i = 0, len = totalHandler.length; i < len; ++i)
+            totalHandler[i].innerHTML = commentsTotal;
+    }
+
+    var addAjax = undefined;
+
+    /**
+     * 添加一条心的评论数据
+     */
+    function addComment()
+    {
+        var classname = $('#classname').val();
+        //var baseUrl = '../../wwwtest.cnmo.com/touch/html/' + classname + '/'; 
+        var url = "index.php@c=CommentAjax&m=AddNewComment&channel=news";
+        var articleId = document.getElementById("articleId").value;
+        var content = document.getElementById("commentContent").value;
+		
+        content = filterBlank(content);
+		
+        if("" == content)
+        {
+            alert("评论内容不能为空!!");
+            document.getElementById("commentContent").focus();
+            return ;
+        }
+
+        if(undefined != addAjax)
+        {
+            alert("发表评论过于频繁！！！");
+            return ;
+        }
+
+        var sendJson =
+        {
+            articleId: articleId,
+            content: content
+        };
+
+        addAjax = $.post(url, sendJson, function (data)
+        {
+            insertComment(data.nickname, content);
+            addCommentsTotal();
+            displayMoreCommentsBar();
+
+            // 允许提交评论
+            addAjax = undefined;
+        }, "json");
+
+        // 清空输入框中的内容
+        document.getElementById("commentContent").value = "";
+    }
+</script>
+<!--头部-->
+<!--header-->
+<script src="../touch/js/common.js"></script>
+<!--头部-->
+<!--header-->
+<section class="bg-head clearfix bgHead-fixed">
+    <a href="javascript:void(0);"  class="r_nav_hover" ></a>
+    <nav class="r_nav_con" id="nav_con">
+        <span><a class="o1" href="default.htm">资讯中心</a></span>
+        <span><a class="o2n" href="../fashion/c9_s73.html">手机时尚</a></span>
+        <span><a class="o3" href="../product/mobile/all/product.html">手机大全</a></span>
+        <span><a class="o4n" href="../app/default.htm">手机应用</a></span>
+    </nav>
+    <a href="../default.htm" class="logo" onFocus="this.blur()">手机中国</a>
+    <span class="ge"></span>
+    <h1 class="tit-h1">
+        <span id="colwite" class="newsTitle">
+        <a href="default.htm">资讯</a><em>></em><a href="default.htm">新闻</a>
+        </span>
+    </h1>
+</section>
+<!--导航-->
+<!-- 公用导航 -->
+<script>
+// 头部导航缓动显示与隐藏
+$(function(){
+    $(".r_nav_hover").click(function(){
+            if ($("#nav_con").css("display") == "none") {
+                $("#nav_con").css("display","block");
+            } else if ($("#nav_con").css("display") == "block") {
+                $("#nav_con").css("display", "none");
+            }
+        }
+    )
+});
+</script><!--导航-->
+<!-- 公用导航 -->
+<section class="Main-index bgHead-fixed-mt">
+    <h2 class="h2Tit">扎堆9月 IFA 2014发布会汇总</h2>
+    <div class="DateoDiv">
+        <a href="#commentsArea" class="dateRight"><font name="commentsTotal">3</font><em class="emico"></em></a>
+        <span class="dateLeft"><label>2014-08-16 11:04:48</label><label class="date-names">沈唱唱</label></span>
+    </div>
+    <div class="TxtPic">
+        
+
+
+
+<P>　　【<a href="../../www.cnmo.com/default.htm" class="key_word">手机</a>中国 新闻】IFA 2014德国柏林国际消费电子展（the Internationale Funkausstellung）将于北京时间9月6日到11日举行。在此之前，<a href="../../product.cnmo.com/pro_sub_manu/sub_57_manu_98_1.shtml" class="key_word">三星</a>、<a href="../../product.cnmo.com/pro_sub_manu/sub_57_manu_32831_1.shtml" class="key_word">索尼</a>、<a href="../../product.cnmo.com/pro_sub_manu/sub_57_manu_32799_1.shtml" class="key_word">微软</a>等手机厂商先后向媒体发出了新品发布会的邀请函。各个发布会的时间虽不在IFA大展期间，但无疑是借大展的风头来吸引更多消费者的眼球。大家期待已久的各路旗舰机，三星Galaxy <a href="../../product.cnmo.com/cell_phone/index1621303.shtml" class="key_word">Note 4</a>、<a href="../../product.cnmo.com/cell_phone/index1621356.shtml" class="key_word">索尼Xperia Z3</a>、WP 8.1系统的Lumia新机等，不出意外都将在IFA大展开幕前亮相。旗舰新品扎堆太多，理不出头绪？下面笔者就将IFA大展各大厂商的新品发布会按时间顺序一一梳理。</P>
+<P><STRONG>1. 三星手机发布会<BR>时间：2014年9月3日15:00（北京时间9月3日21:00）<BR>地点：德国柏林/纽约/北京（三地同步举行）<BR>新品：三星Galaxy Note 4</STRONG></P>
+<P>　　关于三星Note 4的传闻已久，现在终于明确了发布的时间，邀请函上也给出了一些Note 4的暗示。汇总此前的消息，Note 4的具体配置如下：5.7英寸1440×2560分辨率显示屏（或有曲面屏与普通屏两个版本）、1600万像素主摄像头、3GB或4GB RAM、骁龙805四核/Exynos 5433八核处理器、<a href="../../app.cnmo.com/android/default.htm" class="key_word">Android</a> 4.4.3 KitKat操作系统。外观方面，三星Note 4或将采用金属机身设计。此次发布会将在德国柏林、美国纽约与中国北京三个城市同步举行。</P>
+<P align=center><a href="428517_1111613.html"><IMG style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid" alt="9月新机扎堆亮相 IFA 2014发布会汇总 " src="http://img.cnmo-img.com.cn/1112_500x375/1111613.jpg"></a><BR>三星9月3日发布会邀请函</P>
+<P><STRONG>2. 索尼新品发布会<BR>时间：9月3日16:15（北京时间9月3日22:15）<BR>新品：索尼Xperia <a href="../../product.cnmo.com/cell_phone/index1620171.shtml" class="key_word">Z3</a>/Z3 Compact等</STRONG></P>
+<P>　　索尼近日向媒体发出邀请涵，将于9月3日于德国柏林举办新品发布会。邀请函上显示索尼将可能发布手机、平板、相机镜头以及电视机等多款新品，传闻已久的Xperia Z3与Z3 Compact很可能在此次发布会上亮相。</P>
+<P align=center><a href="428517_1111614.html"><IMG style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid" alt="9月新机扎堆亮相 IFA 2014发布会汇总 " src="http://img.cnmo-img.com.cn/1112_500x375/1111614.jpg"></a><BR>索尼9月3日发布会邀请函</P>
+<P><STRONG>3. <a href="../../product.cnmo.com/pro_sub_manu/sub_57_manu_227_1.shtml" class="key_word">华硕</a>新品发布会<BR>时间：9月3日<BR>新品：新款Zenfone/智能手表</STRONG></P>
+<P>　　相比之下，华硕的邀请函可谓十分简洁。除其宣传口号“In Search of Incredible”之外，邀请函上只写出了发布会将于9月3日举办的消息，并未透露新品的任何信息。去年IFA大展上华硕推出了多款<a href="../../pad.cnmo.com/default.htm" class="key_word">平板电脑</a>与<a href="../../product.cnmo.com/all/product_k36_t1_p1.html" class="key_word">智能手机</a>新品，媒体推测此次发布会上我们可能会见到新版Zenfone以及一款智能手表。</P>
+<P align=center><a href="428517_1111615.html"><IMG style="BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid" alt="9月新机扎堆亮相 IFA 2014发布会汇总 " src="http://img.cnmo-img.com.cn/1112_500x375/1111615.jpg"></a><BR>华硕9月3日发布会邀请函</P>    </div>
+    <div class="loading-div" style="display:none"><label></label><span>正在加载更多</span></div>
+    <ul class="mod_page2"><li><span>上一页</span></li><li id="surptext"><a href="javascript:;" onclick="loadoc();" target="_self">余下全文<label>1/2</label></a></li><li><a href="428874.html" class="end" target="_self">下一页</a></li></ul>    <div id="loader"></div>
+    <div class="Share">
+        分享到：
+        <span>
+            <a href="../../service.weibo.com/share/share.php@url=http_253A_252F_252Fm.cnmo.com_252Fnews_252F428517.html&title=_25D4_25FA_25B6_25D19_25D4_25C2+IFA+20140695395CA0"><img src="../../icon.cnmo-img.com.cn/touch/info/weibo.jpg"></a>
+            <a href="../../share.v.t.qq.com/index.php@c=share&a=index&url=http_253A_252F_252Fm.cnmo.com_252Fnews_252F428517.html&title=_25D4_25FA_25B6_25D19_250A706E4706"><img src="../../icon.cnmo-img.com.cn/touch/info/qqweibo.jpg"></a>
+            <a href="../../sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey@url=http_253A_252F_252Fm.cnmo.com_252Fnews_252F428517.html&desc=_25D4_25FA_25B6_25D19_25D4_25C2+IFA+2014_0FAB21074C"><img src="../../icon.cnmo-img.com.cn/touch/info/qzone.jpg"></a>
+        </span>
+    </div>
+    <!--广告位-->
+    <div class="TxtPic-img2"><script>write_ad("touch_doc_page_bottom_tonglan1")</script></a></div>
+    <!--end 广告位-->
+        <div class="downoDiv">
+        <a href="../product/mobile/cell_phone/index1621303.shtml"><h3>三星GALAXY Note4</h3></a>  
+        <div class="">
+            <div class="claimListwi clearfix">
+                <div class="iphoneLeft">
+                	<a href="../product/mobile/cell_phone/index1621303.shtml">
+                    <img src="../../imgm.cnmo-img.com.cn/product_erect/160x120/1622/1621303.jpg" alt="三星GALAXY Note4" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg160x120.jpg';">
+					</a>               
+                </div>
+                <div class="iphoneRight">
+                    <span>参考价格：<font color="#cc0000">曝光</font></span>
+                    <span>上市时间：2014-09</span>
+                    <span class="">
+                    <a href="../product/mobile/cell_phone/index1621303.shtml">综述</a><a href="../product/mobile/1622/1621303/param.shtml">参数</a><a href="../product/mobile/1622/1621303/dianping.shtml">点评</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--应用区块-->
+    </section>
+<section>
+            <!--相关新闻-->
+        <div class="NewsoDiv-xg">
+            <div class="NewsoDiv-xg-tit">
+                <a href="default.htm">更多<label>&gt;&gt;</label></a><span>相关新闻</span>
+            </div>
+            <ul class="listUl">
+                                    <li><a href="377200.html">Note 4传闻：12大方面可以期待</a></li>
+                                    <li><a href="400423.html">三星Galaxy Note 4概念机图赏</a></li>
+                                    <li><a href="398122.html">智能指纹 三星Note 4新功能曝光</a></li>
+                                    <li><a href="394863.html">32GB存储 美版Note 4型号曝光</a></li>
+                                    <li><a href="391911.html">5.7英寸屏 三星Note 4配置曝光</a></li>
+                            </ul>
+        </div>
+        <!--end 相关新闻-->
+        <!--热门资讯-->
+            <div class="NewsoDiv-xg mt15">
+            <div class="NewsoDiv-xg-tit">
+                <!--<a href="">更多<label>&gt;&gt;</label></a>--><span>热门资讯</span>
+            </div>
+            <ul class="listUl">
+                                    <li><a href="423937.html">真机大曝光 最新iPhone 6图集</a></li>
+                                    <li><a href="../reviews/420114.html">金属框/跑分43000+ 小米4初体验</a></li>
+                                    <li><a href="../reviews/419958.html">金属材质手感好 小米4真机赏</a></li>
+                                    <li><a href="../reviews/420577.html">1999巅峰战 小米4对比Z7 Max</a></li>
+                                    <li><a href="417922.html">配置雷人 小米4突现零售商网站</a></li>
+                            </ul >
+        </div>
+        <!--end 热门资讯-->
+    <!--网友评论-->
+    <div class="NewsoDiv-xg mt15" id="commentsArea">
+        <div class="NewsoDiv-xg-tit  news_t">
+            <span>网友评论</span>
+            <div class="m_login"  id="user_login"><a href="../../passport.m.cnmo.com/register/default.htm">注册</a><i>|</i><a href="../../passport.m.cnmo.com/login/default.htm">登录</a></div>
+        </div>
+        <div class="textoDiv">
+            <p>
+                <textarea class="textarea-txt" id="commentContent"></textarea>
+            </p>
+        </div>
+    </div>
+    <!--end 网友评论-->
+    <!--发表评论-->
+    <section class="btn5 Bntosection">
+        <a href="javascript:;" onclick="addComment();"><span id="postIdTip"><i></i>发表评论</span></a>
+    </section>
+    <!--end 发表评论-->
+    <section class="CommentTxt" id="comments">
+                    <div class="commnetoDiv">
+                <header class="c1Tit"><span class="r">shoujikong2012</span><span class="rightDate">15分钟前</span></header>
+                <article class="commentTxt-p">
+                    <p>我还是更期待微软的发布会</p>
+                </article>
+            </div>
+                    <div class="commnetoDiv">
+                <header class="c1Tit"><span class="r">手机中国浙江网友</span><span class="rightDate">2小时前</span></header>
+                <article class="commentTxt-p">
+                    <p>你以为代理很容易？我7月干了差不多20几天每天都在贴吧微信上宣传，想买的人道是不少，就是真的买了的一个都没！！我现在发现了一个真的可以赚钱的东西，去百度搜索酷划，这是一款锁屏软件，你去下载来安装了注册时输入邀请码81239950 后直接送你2元不输没有2元，然后再每次解锁屏幕就会累计点钱，我用这个差不多用了半个月了，差不多挣了100左右了，就当零花钱来赚吧</p>
+                </article>
+            </div>
+                    <div class="commnetoDiv">
+                <header class="c1Tit"><span class="r">18099926668</span><span class="rightDate">3小时前</span></header>
+                <article class="commentTxt-p">
+                    <p>支持</p>
+                </article>
+            </div>
+            </section>
+    <!--发表评论-->
+    <section class="btn5 Bntosection Bnt-more" id="lookCommentsMore" >
+        <a href="index.php@c=CommentsDetail&m=Index&documentId=428517"><span id="postIdTip"><i></i>查看3条评论</span></a>
+    </section>
+    <!--end 发表评论-->
+            <!--新闻推荐-->
+        <div class="NewsoDiv-xg news-tuijian">
+            <div class="NewsoDiv-xg-tit">
+                <span>新闻推荐</span>
+            </div>
+            <ul class="listUl">
+                                    <li><a href="428309.html">从EMUI3.0看华为未来战略</a></li>
+                                    <li><a href="428269.html">一加手机竹质版18日预约</a></li>
+                                    <li><a href="428365.html">9月4日将推Moto新品</a></li>
+                                    <li><a href="428367.html">三星Note 4配置再曝光</a></li>
+                                    <li><a href="428447.html">华硕发IFA 2014邀请函</a></li>
+                            </ul>
+        </div>
+        <!--end 新闻推荐-->
+    <!--底部导航-->
+    <input type="hidden" id="classname" value="news" />
+    <div class="footNav">
+    <ul class="clearfix">
+        <li><a class="footNav-1" href="../default.htm">首页</a></li>
+        <li><a class="footNav-2-t" href="default.htm">新闻</a><a class="footNav-2-b" href="../product/mobile/all/product.html">手机大全</a></li>
+        <li><a class="footNav-3-t" href="../reviews/default.htm">评测</a><a class="footNav-3-b" href="../tu/c8.html">数码漫谈</a></li>
+        <li><a class="footNav-4-t" href="../app/default.htm">下载</a><a class="footNav-4-b" href="../tu/c1.html">手机美图</a></li>
+    </ul>
+</div>    <!--end 底部导航-->
+</section>
+<!--返回顶部-->
+<div id="to_top" style="display: none;"><a href="javascript:;"></a></div>
+<!--end 返回顶部-->
+<!--底部-->
+<script>
+new Image().src='../../pvsite.cnmo.com/images/at001.gif@type=m_article_pv&objid=428517'+'&r='+Math.random();
+</script>
+<!--footer(公用)-->
+<footer class="footer footer-Article">
+    <div class="centerbox clearfix">
+        <a id="touchUrl" href="428517.html" class="cur">触屏版</a>
+        <a id="pcUrl" href="428517.html">电脑版</a>
+    </div>
+<script language="JavaScript" type="text/javascript" src="../../js.cnmo.com/pv.js"></script>
+    <script language="JavaScript" src="../../stat.cnmo.com/ol_cnmo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F04fab3def376a222f35762aa47e96232' type='text/javascript'%3E%3C/script%3E"));
+        // 电脑版跳转
+        $("#pcUrl").click(function(){
+            writeCookie('isJumpTo', '1', 24);
+        });
+    </script>
+</footer><!--底部-->
+<!--end 返回顶部-->
+<script language="javascript">
+        var docArr = new Array();
+        docArr = [428517,428874];
+        var o = docArr.indexOf(428517);
+        var h = $(window).height();
+        var classname = $('#classname').val();
+        //var baseUrl = '../../wwwtest.cnmo.com/touch/html/' + classname + '/';
+        function loadoc(){
+            var j = o+1;
+            $.get("index.php@c=AjaxDoc&m=GetPage&documentId="+docArr[j],function(result){
+                $(".TxtPic").append(result);
+                $(".mod_page2").hide();
+            });
+            var waitStatus = false;
+            $(window).scroll(function () {
+        	    var topLoad = parseInt($("#loader").offset().top);
+                var Loading = $(window).scrollTop();
+                if((topLoad-Loading)<=(2*h)){
+                    if (false === waitStatus) {
+                        waitStatus=true;
+                        j++;
+                        if(docArr[j] && typeof(docArr[j])!="undefined" && docArr[j]!=0 ){
+                            $(".loading-div").show();
+                            $.get("index.php@c=AjaxDoc&m=GetPage&documentId="+docArr[j],function(result){
+                                $(".loading-div").hide();
+                                $(".TxtPic").append(result);
+                                waitStatus = false;
+                            });
+                        }
+                    }
+                }
+        	});
+        }
+</script>
+<script type="text/javascript" src="../touch/js/touch-public.min.js"></script>
+<script type="text/javascript" src="../js/siteLogin.js@id=user_login&tmp=touchNormall"></script>
+</body></html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>懒人模板-百程境外游特卖触屏版自适应手机旅游网站模板下载-http://www.lanrenmb.com/yulexiuxian/lvyou/</title>
+<link href="../../h5/css/common.css" type=text/css rel=stylesheet>
+<link href="../../h5/css/style.css" type=text/css rel=stylesheet>
+<script type="text/ecmascript" src="../../h5/js/zepto.js"></script>
+<script type="application/ecmascript" src="../../h5/js/countTime.js"></script>
+</head>
+<body>
+<form id="order_confirm" method="post" action="/order/submit_b/54071">
+	<div class="index">
+       <!--确认出行信息-->
+       <div class="info_top" style="background:#fff;">确认出行信息</div>
+       <div class="data_box">
+       		<div class="data_box_box pt5 mb20">
+            	<h2 class="f16 tc p10">出行时间</h2>
+                <div class="data_box_box_border">
+                    <li class="pl10 end">2014-09-29 (周一)</li>
+                </div>
+            </div>
+            <div class="data_box_box pt5">
+                <div class="data_box_box_border">
+                	<li>
+                    	<div class="data_poper pl10">人数  <span>￥<b id="pro_price" offset='6000'>13699</b>/人</span></div>
+                        <div></div>
+                        <div class="data_input">
+                        	<input type="button" value="-" class="type_input1 arc" id="people_minus">
+                            <input type="text" value="2" min_val='2' max_val='9' class="type_input2 arc" readonly id="people_sun" name="people_count">
+                            <input type="button" value="+" class="type_input3 arc" id="people_plus">
+                        </div>
+                    </li>
+                    <li class="end">
+                    	<div class="data_poper pl10">房间数</div>
+                        <div class="data_input">
+                        	<input type="button" value="-" class="type_input1 arc" id="room_minus">
+                            <input type="text" value="1" class="type_input2 arc" readonly  id="room_sun" name="room_count">
+                            <input type="button" value="+" class="type_input3 arc" id="room_plus">
+                        </div>
+                    </li>
+                    <input type="hidden" id="count" value="21398" name="sum_price">
+                </div>
+            </div>
+            
+            <div class="data_box_box pt5">
+            	<h3 class="f12 tc mb15 c9">每两人同行且同住一间房，即可享受立减优惠</h3>
+                <div class="data_box_box_border">
+                	<li class="end">
+                    	<p class="insurance_price fl pl10">保险 <span>￥<b id="insur_price">215</b>/份</span></p>
+                        <p class="insurance_num fl">
+                            <label>
+                                <span id="insur_sun">2</span>份
+                                <input type="radio" value="2" name="insurance_count" id="insur_plus">
+                            </label>
+                        </p>
+                        <p class="insurance_empty fr pr10">
+                            <label>无需
+                                <input type="radio" value="0" name="insurance_count" checked  id="insur_minus">
+                            </label>
+                        </p>
+                    </li>
+                </div>
+            </div>
+       </div>
+
+       <!--确认出行信息-end--> 
+       <!--立即预定-->
+        <div class="data_fix">
+        	<a href="javascript:void(0)">
+            	<p class="fix_left pl10">总计 ¥<span id="count_sun">21398</span>元</p>
+                <p class="fix_right pr10"><span>下一步</span><i><img src="../../h5/css/bgimages/arrow.png"></i></p>
+            </a>
+        </div>
+        <!--立即预定-end-->
+    </div>
+</form>
+</body>
+</html>
+<script type="text/ecmascript">
+//房间差计算
+/*
+p_plus  == 人数加按钮id;
+p_minus == 人数减按钮id;
+p_sun   == 人数统计id;
+r_plus  == 房间数加按钮id;
+r_minus == 房间数减按钮id;
+r_sun   == 房间数统计id;
+insur_plus   == 保险需要点击按钮id;
+insur_minus  == 保险不需要点击按钮id;
+insur_sun    == 保险人数id;
+count_sun    == 总计id;
+pro_price    == 单价(产品)id;
+insur_price  == 单价(保险)id;
+offset       == 立减基数id
+*/
+(function(p_plus,p_minus,p_sun,r_plus,r_minus,r_sun,insur_plus,insur_minus,insur_sun,count_sun,pro_price,insur_price,offset){
+	var offset=parseInt($('#'+pro_price).attr(offset))//立减基数
+	var min_val=parseInt($('#'+p_sun).attr('min_val'));//最小出行人数
+	var max_val=parseInt($('#'+p_sun).attr('max_val'));//最大出行人数
+	var pro_price=parseInt($('#'+pro_price).text());//产品单价
+	var insur_price=parseInt($('#'+insur_price).text());//保险单价
+	$('#'+p_plus).tap(function(){//加人数
+		var num=parseInt($('#'+p_sun).val());
+		if(num<max_val){
+			num++;
+			$('#'+p_sun).val(num);
+		}
+		$('#'+insur_sun).text(num);//保险人数统计
+		$('#'+insur_plus).val(num);//保险人数统计(发给后台)
+		$('#'+r_sun).val(Math.ceil(num/2));//房间个数（默认2人一间房）
+
+        var i_sun=parseInt($('#'+insur_plus).val());
+
+		price_count(num,Math.ceil(num/2),i_sun);
+	});
+	$('#'+p_minus).tap(function(){//减人数
+		var num=parseInt($('#'+p_sun).val());
+		if(num>min_val){
+			num--;
+			$('#'+p_sun).val(num);
+		}
+		//单房差计算
+		$('#'+insur_sun).text(num);//保险人数统计
+		$('#'+insur_plus).val(num);//保险人数统计(发给后台)
+		$('#'+r_sun).val(Math.ceil(num/2));//房间个数（默认2人一间房）
+        var i_sun=parseInt($('#'+insur_plus).val());
+		price_count(num,Math.ceil(num/2),i_sun);
+	});
+	$('#'+r_plus).click(function(){//加房间
+		var num=parseInt($('#'+p_sun).val());//人数
+		var r_num=parseInt($('#'+r_sun).val());//房间数
+        var i_sun=$("input[name='insurance_count'] :checked").val();
+		if(r_num<num){
+			r_num++;
+			$('#'+r_sun).val(r_num);
+		}
+		price_count(num,r_num,i_sun);
+		
+	});
+	$('#'+r_minus).click(function(){//减房间
+		var num=parseInt($('#'+p_sun).val());//人数
+		var r_num=parseInt($('#'+r_sun).val());//房间数
+        var i_sun=$("input[name='insurance_count'] :checked").val();
+		var min_r_num=Math.ceil(num/4);//最小房间要求（4个人一间房）
+		if(r_num>min_r_num){
+			r_num--;
+			$('#'+r_sun).val(r_num);
+		}
+		price_count(num,r_num,i_sun);
+	});
+	$('#'+insur_plus).click(function(){//增加保险
+		if(this.checked){
+			var num=parseInt($('#'+p_sun).val());//人数
+			var r_num=parseInt($('#'+r_sun).val());//房间数
+            var i_sun=$("input[name='insurance_count'] :checked").val();
+			price_count(num,r_num,i_sun);
+		}
+	});
+	$('#'+insur_minus).click(function(){//取消保险
+		if(this.checked){
+			var num=parseInt($('#'+p_sun).val());//人数
+			var r_num=parseInt($('#'+r_sun).val());//房间数
+            var i_sun=$("input[name='insurance_count'] :checked").val();
+			price_count(num,r_num,i_sun);
+		}
+	});
+	
+	
+	
+	//价钱统计
+	/*
+		p_sun  == 总人数
+		r_sun  == 总房数
+		i_sun  == 保险人数
+	*/
+	function price_count(p_sun,r_sun,i_sun){
+		var count=((p_sun-r_sun)*offset);
+		$('#'+count_sun).text(p_sun*pro_price-count+i_sun*insur_price);
+		$('#count').val($('#'+count_sun).text());
+	}
+	
+}('people_plus','people_minus','people_sun','room_plus','room_minus','room_sun','insur_plus','insur_minus','insur_sun','count_sun','pro_price','insur_price','offset'));
+
+$('.data_fix').click(function(){
+    $('#order_confirm').submit();
+});
+
+</script>

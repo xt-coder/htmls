@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="gb2312">
+<title>懒人模板-中国第一专业手机门户触屏版自适应html5手机网站模板-http://www.lanrenmb.com/shenghuofuwu/menhu/</title>
+    <meta name="keywords" content="iPhone 5S,苹果iPhone 5S" />
+    <meta name="description" content="手机中国为您提供苹果iPhone 5S报价，图片，参数等信息，并有百万网友点评及专业评测信息带您了解苹果iPhone 5S。" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon-precomposed" href="../../../../icon.cnmo-img.com.cn/touch/cnmo.png" />
+<!--    <link rel="stylesheet" href="http://static.cnmo-img.com.cn/touch/css/common.css"/>-->
+    <link rel="stylesheet" href="../../../touch/css/commonNew.css"/>
+    <link rel="stylesheet" href="../../../touch/product/mobile/css/seach.css"/>
+    <link rel="stylesheet" href="../../../touch/product/mobile/css/index-dq.css"/>
+    <script src="../../../touch/js/jquery-1.8.3.min.js"></script>
+    <script src="../../../../pic.cnmo-img.com.cn/oddjs/m/detail.js"></script>
+</head>
+    <!--[if IE]>
+    <script src="../../../../topic.cnmo.com/active/11/zt_topic_head/html5.js"></script>
+    <![endif]-->
+<body>
+    <script>write_ad("touch_pro_detail_top_tonglan1");</script>
+	<div style="display: none">
+		<img src="http://imgm4.cnmo-img.com.cn/cnmo_product/19_450x337/194/ceHvuBLcSwebU.jpg" />	</div>
+    <!--header(公用)-->
+    <!--header(公用)-->
+<!--公共JS内涵读写Cookie函数-->
+<script src="../../../touch/js/common.js"></script>
+<script src="../../../touch/js/iscroll-lite.js"></script>
+<section class="bg-head clearfix">
+    <a  class="r_nav_hover" href="javascript:void(0)"></a>
+    <nav class="r_nav_con" id="nav_con">
+        <span><a class="o1" href="../../../news/default.htm">资讯中心</a></span>
+        <span><a class="o2n" href="../../../fashion/c9_s73.html">手机时尚</a></span>
+        <span><a class="o3" href="../all/product.html">手机大全</a></span>
+        <span><a class="o4n" href="../../../app/default.htm">手机应用</a></span>
+    </nav>
+    <a href="../../../default.htm" class="logo" onFocus="this.blur()">手机中国</a>
+<!--    <span class="ge"></span>-->
+    <div id="crumb" class="crumb">
+        <ul class="h1 clearfix" style="height:43px;">
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><h1>苹果iPhone 5S</h1></li>
+        </ul>
+    </div>
+</section>
+<!--遮罩层，up是向上箭头，down是向下箭头-->
+<section class="zhezhaobox" id="Zhezhaobox">
+    <div class="zhezhao" id="Zhezhao"></div>
+    <a href="#" id="zhezhaoa"><span class="up-down"></span></a>
+</section>
+<script>
+// 头部导航缓动显示与隐藏
+$(function(){
+    $("#Zhezhao").css("height", $("body").height());
+    $("#zhezhaoa").css("height", $("body").height());
+
+    $("#zhezhaoa").click(function(){
+        $("#Zhezhaobox").css("display", "none");
+        $("#nav_con").css("display", "none");
+    });
+    
+    $(".r_nav_hover").click(function(){
+            if ($("#nav_con").css("display") == "none") {
+                //$("#Zhezhaobox").css("top","99px");
+                $("#nav_con").css("display","block");
+                //$("#Zhezhaobox").css("display","block");
+            } else if ($("#nav_con").css("display") == "block") {
+                //$("#Zhezhaobox").css("top","99px");
+                $("#nav_con").css("display", "none");
+                //$("#Zhezhaobox").css("display", "none");
+            }
+        }
+    )
+});
+
+// 头部H1标签滑动效果
+var obj={snap:"li",hScrollbar:false,momentum:false,lockDirection:false};
+window.addEventListener("load",loaded,false);
+function loaded(){
+	var b=new iScroll("crumb",obj);
+	b.scrollToElement("li:nth-child(2)",1000)
+}
+</script>    <!--seach（公用）-->
+    <section class="seachall">
+    <section class="seach-cnmo">
+        <div class="seach-bg">
+            <div class="seach-padding">
+                <input name="q" type="text" class="text" id="keywordHeader" value="">
+            </div>
+            <input value="1" type="submit" class="seach-ico" id="ico"/>
+        </div>
+    </section>
+</section>
+<!-- 搜索框JS -->
+<script language="JavaScript" type="text/javascript">
+// 搜索JS
+keywordDefaultValue = 'iPhone 6';
+if (!$("#keywordHeader").val()) {
+    $("#keywordHeader").val(keywordDefaultValue);
+}
+
+var keywordAfterValue = $("#keywordHeader").val();
+var keywordAfterValue = '';
+
+$("#keywordHeader").click(function(){
+    $(this).val('');
+});
+
+$("#keywordHeader").blur(function(){
+    keywordAfterValue = $(this).val();
+    if (!$(this).val() && !keywordAfterValue) {
+        $(this).val(keywordDefaultValue);
+    } else {
+        $(this).val(keywordAfterValue);
+    }
+
+    var keyword = $(this).val();
+    if (keyword) {
+        serach(keyword);
+    }
+});
+
+$("#ico").click(function(){
+    $("#keywordHeader").val(keywordAfterValue);
+    serach(keywordAfterValue);
+});
+
+function serach(keyword) {
+    if (keyword) {
+        window.location.href="../search.php@q="+keyword;
+    }
+}
+</script>    <!--主体内容1-->
+    <section class="main-index">
+    	<div class="mbx">
+	<a href="../all/product.html">手机大全</a><em>></em><a href="../pro_sub_manu/sub_57_manu_544_1.shtml">苹果</a><em>></em><span><a href="index163025.shtml">苹果iPhone 5s(16GB)</a></span>
+</div>    	<!--导航-->
+        <div class="se-nav">
+	<ul class="clearfix">
+	<li><a class="cur" href="index163025.shtml">综述</a></li><li><a  href="../164/163025/dianping.shtml">点评</a></li><li><a  href="../164/163025/pic.shtml">图片</a></li><li><a  href="../164/163025/price.shtml">报价</a></li><li><a  href="../164/163025/param.shtml">参数</a></li><li><a  href="../164/163025/article.shtml">文章</a></li>	</ul>
+</div>        <!--焦点图-->
+        <style type="text/css">
+			.imgshow ul{width:10000px;margin-left:-20px;}
+			.imgshow li{float:left;width:240px;}
+			.imgshow li a {width: 240px;height: 135px;display: block;cursor: pointer;margin-top: -50px;padding-top: 50px;}
+			.imgshow li.endLi{width:238px;height:178px;border:1px solid #E4E4E4;background:#F1F1F1;text-align:center;}
+			.imgshow li.endLi p{width:238px;text-align:center;height:67px;margin:auto;margin-top:45px;color:#999}
+			.imgshow li.endLi p span{font-size:38px;color:#CC0001}
+			.imgshow li.endLi p a{color:#999}
+			.imgshow li.endLi p a label {display: block;font-size: 16px;color: #999;cursor: pointer;}
+			.imgshow li.endLi p a em{font-family:'simsun';color:#999}
+		</style>
+		<script>
+			function dirToPic(){
+				window.location.href = "../164/163025/pic.shtml";
+				return ;
+			}
+		</script>
+         
+			
+    		<div class="imgshow" >
+        		<div class="left-zhe" ></div>
+            	<div class="right-zhe"></div>
+				<div class="oDivUl" id="focus"><ul ><li ><a href="javascript:void(0);"><img src="http://imgm4.cnmo-img.com.cn/cnmo_product/19_450x337/194/ceHvuBLcSwebU.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li ><a href="javascript:void(0);"><img src="http://imgm3.cnmo-img.com.cn/cnmo_product/19_450x337/193/cenArMRsknPoY.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li ><a href="javascript:void(0);"><img src="http://imgm1.cnmo-img.com.cn/cnmo_product/19_450x337/211/cefbGJlIl4ic.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li ><a href="javascript:void(0);"><img src="http://imgm.cnmo-img.com.cn/cnmo_product/19_450x337/230/cec0Q31XhziP6.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li ><a href="javascript:void(0);"><img src="http://imgm1.cnmo-img.com.cn/cnmo_product/19_450x337/221/cePxgXjSMnr66.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li ><a href="javascript:void(0);"><img src="http://imgm7.cnmo-img.com.cn/cnmo_product/19_450x337/207/ceGSMdSQ9v1o.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li ><a href="javascript:void(0);"><img src="http://imgm2.cnmo-img.com.cn/cnmo_product/19_450x337/232/cepWNQfgLZpJ.jpg" alt="苹果iPhone 5S" width="240" /></a></li><li class="endLi"><p ><a href="javascript:setTimeout(dirToPic,500);"><span>525</span>张图<label>查看更多<em>>></em></label></a></p></li>
+    				</ul>
+    			</div>
+    		</div>			
+       
+        <!--商家报价-->
+        <section class="s-baojia">
+        	<p><span>参考价格：</span><span class="red">￥4848</span><p>
+            <p><span>商家报价：</span>
+            ￥4260<p>
+            <p><span>手机系统：</span>iOS 7.0</p><p><span>像素：</span>800万</p><p><span>分辨率：</span>1136×640</p><p><span>存储空间：</span>16GB</p><p><span>上市时间：</span>2013年09月</p>            <a href="../164/163025/price_33.shtml" class="s-more">更多商家报价</a>
+            <a href="../164/163025/param.shtml" class="chakan-more">查看更多参数</a>        
+        </section>
+        
+        <!--评价-->
+                 <section class="s-pingjia">
+         	<span class="red2">苹果iPhone 5s(16GB)怎么样</span>
+            <dl>
+                        	<dt>专家点评：</dt>
+                <dd class="clearfix">
+                	<span class="jiao">◆</span>
+                    <span class="jiao2">◇</span>
+                    <div class="lcon">
+                            <div class="lcon-img"><img src="../../../../user.cnmo.com/images/noavatar_small.gif" alt="万宇" width="46" height="46" /></div>
+                            <p><a href="javascript:void(0);">万宇</a></p>
+                    </div>
+                    <div class="rcon">
+                    	<div class="baibor">
+                        	<ul>
+                            	<li><span>优点：</span><div class="rconr">外观简约时尚，金属一体化机身极具质感。iOS 7系统在UI界面上做了大胆改进，64位A7处理器性能提升1倍，双闪光灯效果极为出色。</div></li>
+                            	<li><span>缺点：</span><div class="rconr">市场价格波动较大，金色更是高出官方定价。在大屏日趋主流的今天，4.0英寸的屏幕偏小，看电影、玩游戏的视觉效果不如大屏手机。</div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </dd>
+                    	               <dt>网友评价：</dt>
+                <dd class="clearfix">
+                    <a href="../164/163025/dianping.shtml" class="r">已有860人评论</a>
+                	<span class="jiao">◆</span>
+                    <span class="jiao2">◇</span>
+                   	<div class="xing clearfix">
+                    	 <a href="#" class="r"></a>
+                   		 <p class="p-xing"><span class="x-light" style="width:60%"></span></p><span class="fen">3分</span>                    </div>
+                    <p class="p-word">总之我觉得还是买个4或4s～都可以了不建议买那么贵的～</p>
+                    <p class="p-user">手机中国网友</p>
+                </dd>
+                       </dl>
+             <a href="../164/163025/dianping.shtml" class="chakan-more">查看更多评论</a>
+         </section>
+                  
+        <!--特色功能-->
+               	 <section class="s-gongneng tsgn">
+         	<span class="red2">苹果iPhone 5s(16GB)特色功能</span>
+            <ul class="clearfix">
+            <li><a href="../../../../www.cnmo.com/reviews/290119.html" title="4英寸屏显示清晰">4英寸屏显示清晰</a></li><li><a href="../../../../www.cnmo.com/reviews/290123.html" title="800万像素拍照">800万像素拍照</a></li><li><a href="../../../../www.cnmo.com/reviews/290120.html" title="64位的A7处理器">64位的A7处理器</a></li><li><a href="../../../../www.cnmo.com/reviews/290125.html" title="强大的指纹解锁">强大的指纹解锁</a></li><li><a href="../../../../www.cnmo.com/reviews/296954.html" title="黄金版iPhone 5S">黄金版iPhone 5S</a></li><li><a href="../../../../www.cnmo.com/reviews/292980.html" title="做工精致手机拆解">做工精致手机拆解</a></li>       	   </ul>
+            <a href="../164/163025/article.shtml" class="chakan-more">查看更多文章</a>
+         </section>
+                 
+         <!--看过还关注-->
+                  <section class="s-haigz main-shaixuan">
+         	<span class="hui">看过苹果iPhone 5s(16GB)的用户还关注</span>
+            <ul class="list">
+            <li class="clearfix">
+						<a href="index1621284.shtml">
+						<div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1622/1621284.jpg" alt="华为Ascend P7(移动4G版)" height="60" /></div>
+						<div class="right">
+						<span class="bt">华为Ascend P7(移动4G版)</span>
+						<span class="red">￥2888</span>
+						<span class="con">Android OS 4.4  1300万像素  1920×1080(1080p)像素  16GB...</span>                    </div>
+						<span class="jt-r"></span>
+						</a>
+						</li><li class="clearfix cur-bg">
+						<a href="index162779.shtml">
+						<div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/163/162779.jpg" alt="苹果iPhone 6" height="60" /></div>
+						<div class="right">
+						<span class="bt">苹果iPhone 6</span>
+						<span class="red">曝光</span>
+						<span class="con">iOS 8.0  1300万像素  1920×1080(1080p)像素  16GB...</span>                    </div>
+						<span class="jt-r"></span>
+						</a>
+						</li><li class="clearfix">
+						<a href="index163241.shtml">
+						<div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/164/163241.jpg" alt="努比亚Z7" height="60" /></div>
+						<div class="right">
+						<span class="bt">努比亚Z7</span>
+						<span class="red">￥3456</span>
+						<span class="con">Android OS 4.4  1300万像素  2560×1152像素  32GB...</span>                    </div>
+						<span class="jt-r"></span>
+						</a>
+						</li><li class="clearfix cur-bg">
+						<a href="index1620037.shtml">
+						<div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1621/1620037.jpg" alt="三星N9006(GALAXY Note3)" height="60" /></div>
+						<div class="right">
+						<span class="bt">三星N9006(GALAXY Note3)</span>
+						<span class="red">￥3588</span>
+						<span class="con">Android OS 4.3  1300万像素  1920×1080(1080p)像素  16GB...</span>                    </div>
+						<span class="jt-r"></span>
+						</a>
+						</li><li class="clearfix">
+						<a href="index159884.shtml">
+						<div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/160/159884.jpg" alt="苹果iPhone 5(16GB)" height="60" /></div>
+						<div class="right">
+						<span class="bt">苹果iPhone 5(16GB)</span>
+						<span class="red">停产</span>
+						<span class="con">iOS 6.0  800万像素  1136×640像素  16GB...</span>                    </div>
+						<span class="jt-r"></span>
+						</a>
+						</li><li class="clearfix cur-bg">
+						<a href="index163168.shtml">
+						<div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/164/163168.jpg" alt="摩托罗拉MOTO X" height="60" /></div>
+						<div class="right">
+						<span class="bt">摩托罗拉MOTO X</span>
+						<span class="red">￥3500</span>
+						<span class="con">Android OS 4.2  1000万像素  1280×720(720p)像素  16GB...</span>                    </div>
+						<span class="jt-r"></span>
+						</a>
+						</li>           </ul>
+         </section>
+              </section>
+     <script>
+        var focus; // 定义一个iScroll对象	
+        var first_x,last_x,tag_first_x,tag_last_x; // 定义触点坐标的起始位置变量
+        var focus_first_x=focus_last_x=_cur_x=0; // 定义焦点图触点起始x轴坐标		
+        var moved; // 手指是否移动	
+        var focus_num = _cur = 1; // 当前焦点图为第几张
+        var focus_total = 7+1; // 焦点图的总张数
+        var obj = {hScrollbar:false,momentum:false,lockDirection:false}; // 定义iScroll对象滑动的参数
+        
+        var _focus_box = document.getElementById("focus"); //获取焦点图对象id
+        
+        function loaded(){ 								
+    		focus = new iScroll('focus',obj);
+//    		focus.options.onBeforeScrollStart: function (e) { var nodeType = e.explicitOriginalTarget ? e.explicitOriginalTarget.nodeName.toLowerCase():(e.target ? e.target.nodeName.toLowerCase():'');if(nodeType !='p'&& nodeType !='div'&& nodeType!='h3'&& nodeType!='img') e.preventDefault();};
+        }	
+        window.addEventListener("load",loaded,false);
+        
+        _focus_box.addEventListener('touchstart',focusStart,false);
+        _focus_box.addEventListener('touchmove',focusMove,false);
+        _focus_box.addEventListener('touchend',focusEnd,false);
+        
+        function focusStart(e){
+        	focus_first_x = e.touches[0].pageX;
+        	focus_first_y = e.touches[0].pageY;		
+        	moved = 0;	
+        }
+        
+        function focusMove(e){			
+        	focus_last_x = e.touches[0].pageX;
+        	focus_last_y = e.touches[0].pageY;
+        	
+			var _focus_point = focus_last_x - focus_first_x;
+			if (_focus_point > 10||_focus_point < -10) {		
+				e.preventDefault();
+				moved = 1;
+			}
+        }
+        
+        function focusEnd(e){
+        	if(moved){
+        		var _focus_point = focus_last_x - focus_first_x;
+        		if (_focus_point > 10||_focus_point < -10) {		
+            		if(_focus_point > 30 && focus_num > 1){
+            			focus_num--;
+            		}else if( _focus_point < -30 && focus_num < focus_total){        			
+            		    focus_num++;
+            		}   		
+            		if(focus_num != _cur){
+            			_cur = focus_num;	
+            		}
+            		focus.scrollToElement("li:nth-child("+focus_num+")",400);
+        		}
+        	}								
+        }
+        </script>
+    <!--底部-->
+    <section class="seach-cnmo">
+    <form action="http://m.cnmo.com/product/mobile/search.php" method="get">
+        <div class="seach-bg">
+            <div class="seach-padding">
+                <input name="q" type="text" class="text" id="keywordFooter" value="">
+            </div>
+            <input value="1" type="submit" class="seach-ico" id="ico1" />
+        </div>
+    </form>
+</section>
+<!-- 搜索框JS -->
+<script language="JavaScript" type="text/javascript">
+// 搜索JS
+if (!$("#keywordFooter").val()) {
+    $("#keywordFooter").val(keywordDefaultValue);
+}
+
+var keywordAfterValue = $("#keywordFooter").val();
+
+$("#keywordFooter").click(function(){
+    $(this).val('');
+});
+
+$("#keywordFooter").blur(function(){
+    keywordAfterValue = $(this).val();
+    if (!$(this).val() && !keywordAfterValue) {
+        $(this).val(keywordDefaultValue);
+    } else {
+        $(this).val(keywordAfterValue);
+    }
+
+    var keyword = $(this).val();
+    if (keyword) {
+        serach(keyword);
+    }
+});
+
+$("#ico1").click(function(){
+    $("#keywordFooter").val(keywordAfterValue);
+    serach(keywordAfterValue);
+});
+
+function serach(keyword) {
+    if (keyword) {
+        window.location.href="../search.php@q="+keyword;
+    }
+}
+</script>    <!--footer(公用)-->
+<footer class="footer">
+    <div class="centerbox clearfix">
+        <a id="touchUrl" href="index163025.shtml" class="cur">触屏版</a>
+        <a id="pcUrl" href="../../../../product.cnmo.com/cell_phone/index163025.shtml">电脑版</a>
+    </div>
+    <p>
+    <!--<a href="http://m.cnmo.com/">手机中国</a><br/>-->
+    京ICP备09081256号 京公网安备：<br/>
+    110108902076
+    </p>
+    <script language="JavaScript" type="text/javascript" src="../../../../js.cnmo.com/pv.js"></script>
+    <script language="JavaScript" src="../../../../stat.cnmo.com/ol_cnmo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F04fab3def376a222f35762aa47e96232' type='text/javascript'%3E%3C/script%3E"));
+        // 电脑版跳转
+        $("#pcUrl").click(function(){
+            writeCookie('isJumpTo', '1', 24);
+        });
+    </script>
+</footer></body>
+</html>

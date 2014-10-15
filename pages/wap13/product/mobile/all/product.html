@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="gb2312">
+<title>懒人模板-中国第一专业手机门户触屏版自适应html5手机网站模板-http://www.lanrenmb.com/shenghuofuwu/menhu/</title>
+    <meta name="keywords" content="手机报价,手机大全" />
+    <meta name="description" content="手机中国手机报价提供的机型信息，包括所有手机的报价、参数、点评信息。" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="../../../touch/css/commonNew.css"/>
+    <link rel="stylesheet" href="../../../touch/product/mobile/css/seach.css"/>
+    <link rel="stylesheet" href="../../../touch/product/mobile/css/shaixuan.css"/>
+    <script src="../../../touch/js/jquery-1.8.3.min.js"></script>
+</head>
+<!--[if IE]>
+<script src="../../../../topic.cnmo.com/active/11/zt_topic_head/html5.js"></script>
+<![endif]-->
+<body>
+<!--header(公用)-->
+<!--header(公用)-->
+<!--公共JS内涵读写Cookie函数-->
+<script src="../../../touch/js/common.js"></script>
+<script src="../../../touch/js/iscroll-lite.js"></script>
+<section class="bg-head clearfix">
+    <a  class="r_nav_hover" href="javascript:void(0)"></a>
+    <nav class="r_nav_con" id="nav_con">
+        <span><a class="o1" href="../../../news/default.htm">资讯中心</a></span>
+        <span><a class="o2n" href="../../../fashion/c9_s73.html">手机时尚</a></span>
+        <span><a class="o3" href="product.html">手机大全</a></span>
+        <span><a class="o4n" href="../../../app/default.htm">手机应用</a></span>
+    </nav>
+    <a href="../../../default.htm" class="logo" onFocus="this.blur()">手机中国</a>
+<!--    <span class="ge"></span>-->
+    <div id="crumb" class="crumb">
+        <ul class="h1 clearfix" style="height:43px;">
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><h1></h1></li>
+        </ul>
+    </div>
+</section>
+<!--遮罩层，up是向上箭头，down是向下箭头-->
+<section class="zhezhaobox" id="Zhezhaobox">
+    <div class="zhezhao" id="Zhezhao"></div>
+    <a href="#" id="zhezhaoa"><span class="up-down"></span></a>
+</section>
+<script>
+// 头部导航缓动显示与隐藏
+$(function(){
+    $("#Zhezhao").css("height", $("body").height());
+    $("#zhezhaoa").css("height", $("body").height());
+
+    $("#zhezhaoa").click(function(){
+        $("#Zhezhaobox").css("display", "none");
+        $("#nav_con").css("display", "none");
+    });
+    
+    $(".r_nav_hover").click(function(){
+            if ($("#nav_con").css("display") == "none") {
+                //$("#Zhezhaobox").css("top","99px");
+                $("#nav_con").css("display","block");
+                //$("#Zhezhaobox").css("display","block");
+            } else if ($("#nav_con").css("display") == "block") {
+                //$("#Zhezhaobox").css("top","99px");
+                $("#nav_con").css("display", "none");
+                //$("#Zhezhaobox").css("display", "none");
+            }
+        }
+    )
+});
+
+// 头部H1标签滑动效果
+var obj={snap:"li",hScrollbar:false,momentum:false,lockDirection:false};
+window.addEventListener("load",loaded,false);
+function loaded(){
+	var b=new iScroll("crumb",obj);
+	b.scrollToElement("li:nth-child(2)",1000)
+}
+</script><!--seach（公用）-->
+<section class="seachall">
+    <section class="seach-cnmo">
+        <div class="seach-bg">
+            <div class="seach-padding">
+                <input name="q" type="text" class="text" id="keywordHeader" value="">
+            </div>
+            <input value="1" type="submit" class="seach-ico" id="ico"/>
+        </div>
+    </section>
+</section>
+<!-- 搜索框JS -->
+<script language="JavaScript" type="text/javascript">
+// 搜索JS
+keywordDefaultValue = 'iPhone 6';
+if (!$("#keywordHeader").val()) {
+    $("#keywordHeader").val(keywordDefaultValue);
+}
+
+var keywordAfterValue = $("#keywordHeader").val();
+var keywordAfterValue = '';
+
+$("#keywordHeader").click(function(){
+    $(this).val('');
+});
+
+$("#keywordHeader").blur(function(){
+    keywordAfterValue = $(this).val();
+    if (!$(this).val() && !keywordAfterValue) {
+        $(this).val(keywordDefaultValue);
+    } else {
+        $(this).val(keywordAfterValue);
+    }
+
+    var keyword = $(this).val();
+    if (keyword) {
+        serach(keyword);
+    }
+});
+
+$("#ico").click(function(){
+    $("#keywordHeader").val(keywordAfterValue);
+    serach(keywordAfterValue);
+});
+
+function serach(keyword) {
+    if (keyword) {
+        window.location.href="../search.php@q="+keyword;
+    }
+}
+</script><!--筛选-->
+<section class="screening">
+    <ul class="sx clearfix">
+        <li class="triangle-gray"><a>筛选<span></span></a></li>
+        <li class="triangle-gray"><a>关注度<span></span></a></li>
+        <li class="triangle-gray end"><a>排行榜<span></span></a></li>
+    </ul>
+    <div class="sxcon">
+        <div class="shaixuan_con gsj4" >
+            <div class="over">
+                <div class="gediv"></div><ul class="clearfix"><li class="tit"><a>品牌范围</a></li><li><a href="../pro_sub_manu/sub_57_manu_544_1.shtml">苹果<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_98_1.shtml">三星<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_642_1.shtml">中兴<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1606_1.shtml">酷派<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32831_1.shtml">索尼<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_297_1.shtml">诺基亚<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1673_1.shtml">OPPO<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1795_1.shtml">vivo<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32885_1.shtml">ELIFE<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_613_1.shtml">华为<span></span></a></li><li id="manuMore" class="jia"><a href="#">+</a></li><div id="manuListHidden" style="display : none;"><li><a href="../pro_sub_manu/sub_57_manu_32750_1.shtml">HTC<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_171_1.shtml">TCL<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32844_1.shtml">努比亚<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1434_1.shtml">魅族<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32827_1.shtml">小米<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32880_1.shtml">一加<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_143_1.shtml">LG<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_159_1.shtml">飞利浦<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32881_1.shtml">IUNI<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1763_1.shtml">联想<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_295_1.shtml">摩托罗拉<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_757_1.shtml">黑莓<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32888_1.shtml">锤子<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32869_1.shtml">中国移动<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1632_1.shtml">金立<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32729_1.shtml">天语<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32841_1.shtml">大可乐<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32879_1.shtml">小辣椒<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32769_1.shtml">长虹<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_599_1.shtml">康佳<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_227_1.shtml">华硕<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_19_1.shtml">海信<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32829_1.shtml">朵唯<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32847_1.shtml">青橙<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32859_1.shtml">美图<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32857_1.shtml">卓普<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32889_1.shtml">富可视<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32840_1.shtml">THL<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32886_1.shtml">神舟<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32865_1.shtml">百分之百<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1069_1.shtml">索尼爱立信<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32826_1.shtml">酷比<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32883_1.shtml">龙酷<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32834_1.shtml">亚马逊<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32797_1.shtml">谷歌<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32799_1.shtml">微软<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1081_1.shtml">纽曼<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32824_1.shtml">现代<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32743_1.shtml">夏普<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32855_1.shtml">影驰<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32747_1.shtml">云狐<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_29_1.shtml">爱国者<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32838_1.shtml">北斗<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32839_1.shtml">经纬<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32835_1.shtml">盛大<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_221_1.shtml">海尔<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32792_1.shtml">戴尔<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32798_1.shtml">优派<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32781_1.shtml">宏碁<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32730_1.shtml">HKC <span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32833_1.shtml">NEC<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32782_1.shtml">技嘉<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_223_1.shtml">惠普<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32757_1.shtml">富士通<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_515_1.shtml">Palm<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_563_1.shtml">夏新<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_531_1.shtml">阿尔卡特<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32754_1.shtml">东芝<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32832_1.shtml">京瓷<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32794_1.shtml">卡西欧<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1602_1.shtml">英华达<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32860_1.shtml">基伍<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32851_1.shtml">HIKe<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_355_1.shtml">波导<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1071_1.shtml">万利达<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32837_1.shtml">泰丰<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32793_1.shtml">华晶科技<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32864_1.shtml">果冻<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32870_1.shtml">迪士尼<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32843_1.shtml">读者<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32796_1.shtml">首派<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1041_1.shtml">多普达<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32814_1.shtml">欧恩<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32800_1.shtml">中恒<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32761_1.shtml">摩西<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32846_1.shtml">139易<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32806_1.shtml">齐乐<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1528_1.shtml">泛泰<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32770_1.shtml">i-mate<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32884_1.shtml">nibiru<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_597_1.shtml">英华通<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32786_1.shtml">锋达通<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_1806_1.shtml">宇达电通MIO<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32874_1.shtml">优米<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32819_1.shtml">E人E本<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32873_1.shtml">尼凯恩<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32850_1.shtml">佳域<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32804_1.shtml">博迪<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_23_1.shtml">七喜<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32878_1.shtml">小蜜蜂<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32872_1.shtml">美晨<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32849_1.shtml">小宇宙<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32856_1.shtml">凡尔纳<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32871_1.shtml">SUGAR<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32861_1.shtml">国虹<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32875_1.shtml">创维<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32853_1.shtml">奥克斯<span></span></a></li><li><a href="../pro_sub_manu/sub_57_manu_32803_1.shtml">其他<span></span></a></li></div></ul><div class="gediv"></div><ul class="clearfix"><li class="tit"><a>价格范围</a></li><li><a href="product_r9_t1_p1.html">1-499元<span></span></a></li><li><a href="product_r10_t1_p1.html">500-1000元<span></span></a></li><li><a href="product_r2_t1_p1.html">1000-1500元<span></span></a></li><li><a href="product_r3_t1_p1.html">1500-2000元<span></span></a></li><li><a href="product_r4_t1_p1.html">2000-3000元<span></span></a></li><li><a href="product_r5_t1_p1.html">3000-5000元<span></span></a></li><li><a href="product_r6_t1_p1.html">5000元以上<span></span></a></li></ul><div class="gediv"></div><ul class="clearfix"><li class="tit"><a>外观设计</a></li><li><a href="product_a11_t1_p1.html">直板<span></span></a></li><li><a href="product_a10_t1_p1.html">翻盖<span></span></a></li><li><a href="product_a7_t1_p1.html">滑盖<span></span></a></li><li><a href="product_a8_t1_p1.html">侧滑盖<span></span></a></li><li><a href="product_a6_t1_p1.html">双向滑盖<span></span></a></li><li><a href="product_a5_t1_p1.html">侧翻盖<span></span></a></li><li><a href="product_a9_t1_p1.html">旋转屏<span></span></a></li></ul><div class="gediv"></div><ul class="clearfix"><li class="tit"><a>手机类型</a></li><li><a href="product_k36_t1_p1.html">智能<span></span></a></li><li><a href="product_k44_t1_p1.html">4G<span></span></a></li><li><a href="product_k71_t1_p1.html">大屏<span></span></a></li><li><a href="product_k69_t1_p1.html">女性<span></span></a></li><li><a href="product_k70_t1_p1.html">超薄<span></span></a></li><li><a href="product_k37_t1_p1.html">拍照<span></span></a></li><li><a href="product_k80_t1_p1.html">平板手机<span></span></a></li><li><a href="product_k72_t1_p1.html">学生<span></span></a></li><li><a href="product_k38_t1_p1.html">时尚<span></span></a></li><li><a href="product_k41_t1_p1.html">三防<span></span></a></li><li><a href="product_k73_t1_p1.html">老人<span></span></a></li><li><a href="product_k35_t1_p1.html">3G<span></span></a></li><li><a href="product_k39_t1_p1.html">音乐<span></span></a></li><li><a href="product_k40_t1_p1.html">对讲<span></span></a></li><li><a href="product_k42_t1_p1.html">导航<span></span></a></li><li><a href="product_k43_t1_p1.html">商务<span></span></a></li></ul><div class="gediv"></div><ul class="clearfix"><li class="tit"><a>手机网络</a></li><li><a href="product_m74_t1_p1.html">移动4G(TD-LTE)<span></span></a></li><li><a href="product_m16_t1_p1.html">移动3G(TD-SCDMA)<span></span></a></li><li><a href="product_m14_t1_p1.html">联通3G(WCDMA)<span></span></a></li><li><a href="product_m15_t1_p1.html">电信3G(CDMA 2000)<span></span></a></li><li><a href="product_m12_t1_p1.html">移动/联通2G(GSM)<span></span></a></li><li><a href="product_m13_t1_p1.html">电信2G(CDMA)<span></span></a></li></ul><div class="gediv"></div><ul class="clearfix"><li class="tit"><a>操作系统</a></li><li><a href="product_s20_t1_p1.html">安卓Android<span></span></a></li><li><a href="product_s23_t1_p1.html">wp7<span></span></a></li><li><a href="product_s55_t1_p1.html">wp8<span></span></a></li><li><a href="product_s24_t1_p1.html">苹果ios<span></span></a></li><li><a href="product_s21_t1_p1.html">塞班Symbian<span></span></a></li><li><a href="product_s22_t1_p1.html">Windows Mobile<span></span></a></li><li><a href="product_s25_t1_p1.html">黑莓BlackBerry<span></span></a></li></ul><div class="gediv"></div><ul class="clearfix"><li class="tit"><a>摄像像素</a></li><li><a href="product_c56_t1_p1.html">300万以下<span></span></a></li><li><a href="product_c29_t1_p1.html">500万<span></span></a></li><li><a href="product_c31_t1_p1.html">800万<span></span></a></li><li><a href="product_c32_t1_p1.html">1000万<span></span></a></li><li><a href="product_c33_t1_p1.html">1200万<span></span></a></li><li><a href="product_c57_t1_p1.html">1300万以上<span></span></a></li></ul>            <script>
+                $("#manuMore").click(function(){
+                    $(this).hide();
+                    $("#manuListHidden").show();
+                });
+            </script>
+            </div>
+<!--            <div class="caozuo clearfix">-->
+<!--                <a href="#" class="qingkong"><span></span></a>-->
+<!--                <input type="submit" class="gongxuan" value="共选择了5项参数">-->
+<!--            </div>-->
+        </div>
+        <!--关注度、时间、价格-->
+        <div class="gsj">
+            <ul>
+            <li class="gsj-ju"><a href="product.html">关注度<span class="btto"></span></a></li><li><a href="product_t2_p1.html">时间<span class="btto"></span></a></li><li><a href="product_t3_p1.html">价格<span class="btto"></span></a></li>            </ul>
+        </div>
+        <div class="gsj3">
+            <div class="over">
+                <ul>
+                    <li><a href="top_hot.html">热门手机排行</a></li>
+                    <li><a href="top_new.html">最新手机排行</a></li>
+                    <li><a href="../samsung/top.html">三星手机排行</a></li><li><a href="../apple/top.html">苹果手机排行</a></li><li><a href="../nokia/top.html">诺基亚手机排行</a></li><li><a href="../S/top.html">索尼手机排行</a></li><li><a href="../motorola/top.html">摩托罗拉手机排行</a></li><li><a href="../lenovo/top.html">联想手机排行</a></li>                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--主体内容1-->
+<section class="main-shaixuan">
+    <ul class="list">
+        
+                        <li class="clearfix">
+                            <a href="../cell_phone/index163025.html">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/164/163025.jpg" alt="苹果iPhone 5s(16GB)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">苹果iPhone 5s(16GB)</span>
+                                    <span class="red">￥4848</span>
+                                    <span class="con">iOS 7.0，800万像素，4.0英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix cur-bg">
+                            <a href="../cell_phone/index1620037.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1621/1620037.jpg" alt="三星N9006(GALAXY Note3)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">三星N9006(GALAXY Note3)</span>
+                                    <span class="red">￥3588</span>
+                                    <span class="con">Android OS 4.3，1300万像素，5.7英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix">
+                            <a href="../cell_phone/index1620133.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1621/1620133.jpg" alt="小米手机2S(16GB)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">小米手机2S(16GB)</span>
+                                    <span class="red">￥1299</span>
+                                    <span class="con">MIUI + Android OS 4.1，800万像素，4.3英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix cur-bg">
+                            <a href="../cell_phone/index162985.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/163/162985.jpg" alt="三星GALAXY S4(I9500)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">三星GALAXY S4(I9500)</span>
+                                    <span class="red">￥2888</span>
+                                    <span class="con">Android OS 4.2，1300万像素，5.0英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix">
+                            <a href="../cell_phone/index1619884.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1620/1619884.jpg" alt="诺基亚Lumia 1020" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">诺基亚Lumia 1020</span>
+                                    <span class="red">￥2799</span>
+                                    <span class="con">Windows Phone 8，4100万像素，4.5英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix cur-bg">
+                            <a href="../cell_phone/index1621241.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1622/1621241.jpg" alt="酷派大神F1(移动版)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">酷派大神F1(移动版)</span>
+                                    <span class="red">￥888</span>
+                                    <span class="con">Android OS 4.2，1300万像素，5.0英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix">
+                            <a href="../cell_phone/index1620951.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1621/1620951.jpg" alt="vivo Xplay3S" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">vivo Xplay3S</span>
+                                    <span class="red">￥3498</span>
+                                    <span class="con">Android OS 4.3，1300万像素，6.0英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix cur-bg">
+                            <a href="../cell_phone/index1620265.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1621/1620265.jpg" alt="三星GALAXY S5" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">三星GALAXY S5</span>
+                                    <span class="red">￥3899</span>
+                                    <span class="con">Android OS 4.4，1600万像素，5.1英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix">
+                            <a href="../cell_phone/index1620021.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1621/1620021.jpg" alt="三星I8552(GALAXY Win联通版)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">三星I8552(GALAXY Win联通版)</span>
+                                    <span class="red">￥1088</span>
+                                    <span class="con">Android OS 4.1，500万像素，4.7英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                    
+                        <li class="clearfix cur-bg">
+                            <a href="../cell_phone/index1621569.shtml">
+                                <div class="left"><img src="http://imgm.cnmo-img.com.cn/product_erect/96x146/1622/1621569.jpg" alt="小米红米手机1S(移动版)" height="60" onerror="javascript:this.src='http://icon.cnmo-img.com.cn/product/noimg80x60.jpg';" /></div>
+                                <div class="right">
+                                    <span class="bt">小米红米手机1S(移动版)</span>
+                                    <span class="red">￥699</span>
+                                    <span class="con">Android OS 4.4，800万像素，4.7英寸</span>
+                                </div>
+                                <span class="jt-r"></span>
+                            </a>
+                        </li>
+                        </ul>
+</section>
+<!--search（公用）-->
+    <section class="seach-cnmo">
+    <form action="http://m.cnmo.com/product/mobile/search.php" method="get">
+        <div class="seach-bg">
+            <div class="seach-padding">
+                <input name="q" type="text" class="text" id="keywordFooter" value="">
+            </div>
+            <input value="1" type="submit" class="seach-ico" id="ico1" />
+        </div>
+    </form>
+</section>
+<!-- 搜索框JS -->
+<script language="JavaScript" type="text/javascript">
+// 搜索JS
+if (!$("#keywordFooter").val()) {
+    $("#keywordFooter").val(keywordDefaultValue);
+}
+
+var keywordAfterValue = $("#keywordFooter").val();
+
+$("#keywordFooter").click(function(){
+    $(this).val('');
+});
+
+$("#keywordFooter").blur(function(){
+    keywordAfterValue = $(this).val();
+    if (!$(this).val() && !keywordAfterValue) {
+        $(this).val(keywordDefaultValue);
+    } else {
+        $(this).val(keywordAfterValue);
+    }
+
+    var keyword = $(this).val();
+    if (keyword) {
+        serach(keyword);
+    }
+});
+
+$("#ico1").click(function(){
+    $("#keywordFooter").val(keywordAfterValue);
+    serach(keywordAfterValue);
+});
+
+function serach(keyword) {
+    if (keyword) {
+        window.location.href="../search.php@q="+keyword;
+    }
+}
+</script><!--底部-->
+    <!--footer(公用)-->
+<footer class="footer">
+    <div class="centerbox clearfix">
+        <a id="touchUrl" href="product.html" class="cur">触屏版</a>
+        <a id="pcUrl" href="../../../../product.cnmo.com/all/product.html">电脑版</a>
+    </div>
+    <p>
+    <!--<a href="http://m.cnmo.com/">手机中国</a><br/>-->
+    京ICP备09081256号 京公网安备：<br/>
+    110108902076
+    </p>
+    <script language="JavaScript" type="text/javascript" src="../../../../js.cnmo.com/pv.js"></script>
+    <script language="JavaScript" src="../../../../stat.cnmo.com/ol_cnmo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F04fab3def376a222f35762aa47e96232' type='text/javascript'%3E%3C/script%3E"));
+        // 电脑版跳转
+        $("#pcUrl").click(function(){
+            writeCookie('isJumpTo', '1', 24);
+        });
+    </script>
+</footer><input id="manuId" type="hidden" value="0" />
+<input id="urlParamString" type="hidden" value="_t1_p1" />
+<input id="luceneSearchTotal" type="hidden" value="10303" />
+<input id="rows" type="hidden" value="10" />
+<script>
+    $(function(){
+        $(".sx").children("li").click(function(){
+            $(this).addClass("triangle-red").siblings().removeClass("triangle-red");
+        });
+
+    	i = 1;
+    	var waitStatus = false;
+    	$(window).scroll(function () {
+        	var manuId            = $("#manuId").val();
+        	var urlParamString    = $("#urlParamString").val();
+        	var luceneSearchTotal = $("#luceneSearchTotal").val();
+        	var rows              = $("#rows").val();
+            var body              = $("body");
+            /*判断窗体高度与竖向滚动位移大小相加是否超过内容页高度*/
+            if (($(window).height() + $(window).scrollTop() + 70) >= body.height()) {
+            	if (false === waitStatus) {
+            		waitStatus = true;
+            		i++;
+            		var pages = Math.ceil(luceneSearchTotal / rows);
+                    if (i <= pages) {
+                    	$(".list").append('<b>正在努力加载内容。。。</b>');
+                    	$.post("../index.php", {c : "Ajax_FilterList", a : "Index", manuId : manuId, urlParamString : urlParamString, currentPage : i, luceneSearchTotal : luceneSearchTotal, rows : rows},
+                            function (data) {
+                                $(".list").append(data);
+                                $(".list b").hide();
+                                waitStatus = false;
+                            }
+                        );
+                    }
+                }
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="../../../touch/product/mobile/js/wap.js" /></script>
+</body>
+</html>

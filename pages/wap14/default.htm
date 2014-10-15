@@ -1,0 +1,436 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="时尚,品质,生活,高端,潮流,奢华,收藏,享乐,女性" />
+<meta name="description" content="爱丽网作为中文领先的专业时尚生活女性网站，专注于女性服饰、时尚产业、美容美体、护肤彩妆、珠宝腕表、新潮数码、汽车生活、艺术收藏、运动享乐等品质生活领域，全面打造融专业性、实用性、互动性为一体的中高端人群品质生活交流平台。">
+<title>爱丽时尚触屏自适应手机wap女性网站模板下载-http://www.lanrenmb.com/shenghuofuwu/nvxing</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<link href="css/reset_v4.css" type="text/css" rel="stylesheet" media="all" />
+<link rel="stylesheet" type="text/css" href="css/wap_v2.css" media="all">
+<script type="text/javascript" src="js/app/touchslider_1.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+<div class="nav">
+<div class="page-header">
+<a href="default.htm" target="_self" title=""><img src="http://images.aili.com/appv2/logo.png"/></a>
+</div>
+ <div class="nav_box">
+ <div class="nav_bor">切换栏目</div>
+    <div class="nav_d" id="wrapper1">
+      <ul class="nav_u">
+        <li class="shov"><a href="default.htm">头条</a></li>
+        <li class=""><a href="../fashion.m.aili.com/default.htm">时装</a></li>
+        <li class=""><a href="../beauty.m.aili.com/default.htm">美容</a></li>
+        <li class=""><a href="../luxury.m.aili.com/default.htm">奢华</a></li>
+        <li class=""><a href="../celeb.m.aili.com/default.htm">明星</a></li>
+        <li class=""><a href="../men.m.aili.com/default.htm">型男</a></li>
+        <li class=""><a href="../auto.m.aili.com/default.htm">汽车</a></li>
+		<li class=""><a href="../digi.m.aili.com/default.htm">数码</a></li>
+
+      </ul>
+    </div>
+    <div class="sab arr" ><img src="http://images.aili.com/appv2/down.png" /></div>
+    <ul class="nav_u_down">
+        <li class="hh"><a href="default.htm">头条</a></li>
+        <li ><a href="../fashion.m.aili.com/default.htm">时装</a></li>
+        <li ><a href="../beauty.m.aili.com/default.htm">美容</a></li>
+        <li ><a href="../luxury.m.aili.com/default.htm">奢华</a></li>
+        <li class="line"></li>
+        <li class="hh"><a href="../celeb.m.aili.com/default.htm">明星</a></li>
+        <li ><a href="../men.m.aili.com/default.htm">型男</a></li>
+        <li ><a href="../auto.m.aili.com/default.htm">汽车</a></li>
+		<li ><a href="../digi.m.aili.com/default.htm">数码</a></li>
+ 
+      </ul>
+  </div>
+<!--  当前时间:2014-09-08 08:54:30-->
+</div>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	 var tq = 1;
+	var loading = false;
+  $(window).scroll(function(){
+	
+   if ((($(window).scrollTop() + $(window).height()) + 86) >= $(document).height()){
+    
+			if(loading == false){
+				 
+		loading = true;
+		if(tq<3){
+		$(".pullUpLabel").hide();
+		$(".pullUpLabela").show();
+		tq = tq+1;
+		var paiList="";
+	function getUrlData (url, fn){
+				$.getJSON(url+'&callback=?', function(result){
+					if(fn) fn(result[0]);
+				})
+			};
+			getUrlData('index.php@c=wap&m=index&a=indexDown&times='+tq+'&type=21', function(data){
+				for( var q=0,len=data.length; q<len; q++){
+					if(data[q].content){
+						paiList += '<div class="bot">\
+							<div class="bot_t"><span class="bot_title"><a href="'+data[q].url+'" >'+ data[q].title+'</a></span><span class="list_s list_r">组图</span></div>\
+							<div class="bot_i">\
+								<ul class="bot_u">\
+									<li><a href="'+data[q].url+'" ><img src="'+ data[q].content[0].image_186+'"/></a></li>\
+									<li class="bot_lm"><a href="'+data[q].url+'" ><img src="'+ data[q].content[1].image_186+'"/></a></li>\
+									<li class="tLie"><a href="'+data[q].url+'" ><img src="'+ data[q].content[2].image_186+'"/></a></li>\
+								</ul>\
+							</div>\
+						</div>';
+					}else{
+							paiList += '<div class="list_d">\
+						<a class="list_dd bor_b" href="'+ data[q].url+'">\
+							<div class="list_l"><img src="'+ data[q].image_160+'" /></div>\
+							<div class="list_lt">\
+								<dl class="list_ld">\
+									<dt>'+ data[q].title+'</dt>\
+									<dd>'+ data[q].tip+'...</dd>\
+								</dl>\
+							</div>\
+						</a>';
+						if(data[q].original==1)
+						{
+							paiList += '<span class="list_s list_sg">原创</span>';
+						}
+					paiList += '</div>';
+				   }
+				   
+			}
+			
+				$('#paiList').append(paiList);
+				$(".pullUpLabela").hide();
+				$(".pullUpLabel").show();
+				loading = false;
+				
+			});	
+			 
+		 
+			}/////
+			else{ 
+			 $(".pullUpLabel").html("点击显示下20条");
+				$(".pullUpLabel").bind("click",function(){
+		$(this).hide();
+		$(".pullUpLabela").show();
+		tq = tq+1;
+		var paiList="";
+	function getUrlData (url, fn){
+				$.getJSON(url+'&callback=?', function(result){
+					if(fn) fn(result[0]);
+				})
+			};
+			getUrlData('index.php@c=wap&m=index&a=indexDown&times='+tq+'&type=21', function(data){
+				for( var q=0,len=data.length; q<len; q++){
+					if(data[q].content){
+						paiList += '<div class="bot">\
+							<div class="bot_t"><span class="bot_title"><a href="'+data[q].url+'" target="_blank">'+ data[q].title+'</a></span><span class="list_s list_r">组图</span></div>\
+							<div class="bot_i">\
+								<ul class="bot_u">\
+									<li><a href="'+data[q].url+'" target="_blank"><img src="'+ data[q].content[0].image_186+'"/></a></li>\
+									<li class="bot_lm"><a href="'+data[q].url+'" target="_blank"><img src="'+ data[q].content[1].image_186+'"/></a></li>\
+									<li class="tLie"><a href="'+data[q].url+'" target="_blank"><img src="'+ data[q].content[2].image_186+'"/></a></li>\
+								</ul>\
+							</div>\
+						</div>';
+					}else{
+							paiList += '<div class="list_d">\
+						<a class="list_dd bor_b" href="'+ data[q].url+'" target="_blank">\
+							<div class="list_l"><img src="'+ data[q].image_160+'" /></div>\
+							<div class="list_lt">\
+								<dl class="list_ld">\
+									<dt>'+ data[q].title+'</dt>\
+									<dd>'+ data[q].tip+'...</dd>\
+								</dl>\
+							</div>\
+							<div class="both"></div>\
+						</a>';
+						if(data[q].original==1)
+						{
+							paiList += '<span class="list_s list_sg">原创</span>';
+						}
+					paiList += '</div>';
+				   }
+			}
+				$('#paiList').append(paiList);
+				$(".pullUpLabela").hide();
+				$(".pullUpLabel").show();
+				 
+			});		
+		});
+				
+				}
+	
+			 }
+   }
+  
+		});
+ 
+	});
+</script>
+	<div class="sbox">	
+		<div class="swipe" id="slider">
+			<ul class="piclist" >
+  <li><a href="../fashion.aili.com/383/983806p.html@&image" title="Marissa Webb 2015春夏秀场" target="_blank"><img src="http://img3.aili.com/201409/05/1409900048_30364100.jpg" alt="Marissa Webb 2015春夏秀场"></a>
+    <div class="pci_li"><strong>Marissa Webb 2015春夏秀场</strong></div>
+  </li>
+  <li><a href="../fashion.aili.com/383/983825p.html@&image" title="BCBG Max Azria 2015春夏秀场" target="_blank"><img src="http://img6.aili.com/201409/05/1409900048_39170300.jpg" alt="BCBG Max Azria 2015春夏秀场"></a>
+    <div class="pci_li"><strong>BCBG Max Azria 2015春夏秀场</strong></div>
+  </li>
+  <li><a href="../fashion.aili.com/383/983836p.html@&image" title="Josie Natori 2015春夏女装秀场 " target="_blank"><img src="http://img5.aili.com/201409/05/1409900048_48759900.jpg" alt="Josie Natori 2015春夏女装秀场 "></a>
+    <div class="pci_li"><strong>Josie Natori 2015春夏女装秀场 </strong></div>
+  </li>
+  <li><a href="../celeb.aili.com/2211/983151p.html@&image" title="卡戴珊来势“胸胸” 将微胖姑娘优势进行到底" target="_blank"><img src="http://img5.aili.com/201409/05/1409900048_58022700.jpg" alt="卡戴珊来势“胸胸” 将微胖姑娘优势进行到底"></a>
+    <div class="pci_li"><strong>卡戴珊来势“胸胸” 将微胖姑娘优势进行到底</strong></div>
+  </li>
+  <li><a href="../celeb.aili.com/2213/983697p.html@&image" title="孙俪演绎早春印花裙装 “娘娘”明艳动人" target="_blank"><img src="http://img6.aili.com/201409/05/1409900048_67974300.jpg" alt="孙俪演绎早春印花裙装 “娘娘”明艳动人"></a>
+    <div class="pci_li"><strong>孙俪演绎早春印花裙装 “娘娘”明艳动人</strong></div>
+  </li>
+</ul>
+<div id="pagenavi2" class="page"> <a class="active"></a> <a class=""></a> <a class=""></a> <a class=""></a> <a class=""></a> </div>		</div>
+	</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="zhengwen.html" >
+				<div class="list_l"><img src="http://img7.aili.com/201409/05/1409908907_87078100_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>记忆中的恩师戴这款 汉米尔</dt>
+						<dd>从懵懂无知到风华正茂再到成熟稳重，一路上除了父母的陪...</dd>
+					</dl>
+				</div>
+                <div class="both"></div>
+			</a>
+					</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../luxury.m.aili.com/seasonwatch/984009.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img1.aili.com/201409/05/1409908191_39873400_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>汉米尔顿助力开学季 校园与</dt>
+						<dd>开学季即将来临，在度过轻松惬意暑假同时，即将迎来收获...</dd>
+					</dl>
+				</div>
+                <div class="both"></div>
+			</a>
+					</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../luxury.m.aili.com/gjczx/983999.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img7.aili.com/201409/05/1409905203_07172600_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>“鸽子蛋”带来爱情厄运 几</dt>
+						<dd>克拉钻戒，号称是男女爱情里最“昂贵的承诺”。但是你所...</dd>
+					</dl>
+				</div>
+                <div class="both"></div>
+			</a>
+			<span class="list_s list_sg">原创</span>		</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../beauty.m.aili.com/perfumewom/981790.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img6.aili.com/201409/01/1409553869_09439700_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>妙用水瓶快甩赘肉 月瘦10斤</dt>
+						<dd>在电视节目上人们议论纷纷的“水瓶减肥操”到底是什么呢...</dd>
+					</dl>
+				</div>
+                <div class="both"></div>
+			</a>
+					</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../digi.m.aili.com/kejifasheng/984007.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img7.aili.com/201409/05/1409907773_46880000_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>美剧梦是否破灭 广电总局明</dt>
+						<dd>据国家新闻出版广电总局网站消息，国家新闻出版广电总局...</dd>
+					</dl>
+				</div>
+                <div class="both"></div>
+			</a>
+			<span class="list_s list_sg">原创</span>		</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../men.m.aili.com/guide/983232.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img2.aili.com/201409/04/1409823107_14075900_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>为悦己者容  直男癌的"立领</dt>
+						<dd>女为悦己者容，我想直男癌患者也不例外吧。即使他们的审...</dd>
+					</dl>
+				</div>
+                <div class="both"></div>
+			</a>
+			<span class="list_s list_sg">原创</span>		</div>
+				
+	<div class="bot">
+				<div class="bot_t"><span class="bot_title">一生一世曝光亲密床戏 谢霆锋高圆</span><span class="list_s list_r">组图</span></div>
+		<div class="bot_i">
+			<ul class="bot_u">
+								<li ><a href="../celeb.m.aili.com/mingxingku_pic/983871.html@tpl=default&image"  title="一生一世曝光亲密床戏 谢霆锋高圆圆床上相拥(1)"><img src="http://img34.aili.com/201409/05/140988752654092d2626d8f_RsT_186_120.jpg" /></a></li>
+								<li class="bot_lm"><a href="../celeb.m.aili.com/mingxingku_pic/983871.html@tpl=default&image"  title="一生一世曝光亲密床戏 谢霆锋高圆圆床上相拥(2)"><img src="http://img34.aili.com/201409/05/140988752654092d26d396a_RsT_186_120.jpg" /></a></li>
+								<li  class="tLie"><a href="../celeb.m.aili.com/mingxingku_pic/983871.html@tpl=default&image"  title="一生一世曝光亲密床戏 谢霆锋高圆圆床上相拥(3)"><img src="http://img34.aili.com/201409/05/140988752754092d2771baa_RsT_186_120.jpg" /></a></li>
+							</ul>
+		</div>
+			</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../digi.m.aili.com/shiwan/983881.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img2.aili.com/201409/05/1409911162_42969900_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>I7芯搭GTX870M独显 海尔雷</dt>
+						<dd>上一篇我们对海尔雷神911游戏本的酷跑外观设计进行了详细...</dd>
+					</dl>
+				</div>
+                 <div class="both"></div>
+			</a>
+			<span class="list_s list_sg">原创</span>		</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../men.m.aili.com/guide/983929.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img5.aili.com/201409/05/1409891082_20196600_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>细节王道 鞋面上的时尚</dt>
+						<dd>鞋款作为穿搭的一部分很容易被人忽略，很多人都只是常备...</dd>
+					</dl>
+				</div>
+                 <div class="both"></div>
+			</a>
+					</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../men.m.aili.com/items/983891.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img1.aili.com/201409/05/1409889225_59482900_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>时尚大佬们的标志性单品</dt>
+						<dd>正如提到Tiffany &amp; Co.会令人直接联想到色调清淡而亮...</dd>
+					</dl>
+				</div>
+                 <div class="both"></div>
+			</a>
+					</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../digi.m.aili.com/shuzishenghuo/983986.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img7.aili.com/201409/05/1409902502_95470500_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>是否可以进入智能手机的免</dt>
+						<dd>2008年周鸿祎宣布推出360免费杀毒软件震惊业界，就在各个...</dd>
+					</dl>
+				</div>
+                 <div class="both"></div>
+			</a>
+			<span class="list_s list_sg">原创</span>		</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../auto.m.aili.com/xinche/983805.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img1.aili.com/201409/05/1409883960_64615700_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>2015款Jeep大切诺基发布 新</dt>
+						<dd>日前，Jeep在北美发布了2015款大切诺基，新车增加了两个...</dd>
+					</dl>
+				</div>
+                 <div class="both"></div>
+			</a>
+					</div>
+				<div class="list_d">
+			<a class="list_dd bor_b" href="../auto.m.aili.com/xinche/983837.html@tpl=default&article" >
+				<div class="list_l"><img src="http://img5.aili.com/201409/05/1409885651_16028200_RsT_160_120.jpg" /></div>
+				<div class="list_lt">
+					<dl class="list_ld">
+						<dt>全新宾利GT3-R十月限量发布</dt>
+						<dd>在2014古德伍德速度节上，宾利正式发布了旗下宾利欧陆 G...</dd>
+					</dl>
+				</div>
+                 <div class="both"></div>
+			</a>
+					</div>
+			<div class="bot">
+				<div class="bot_t"><span class="bot_title">黄明暗黑概念写真曝光 阳光少年变</span><span class="list_s list_r">组图</span></div>
+		<div class="bot_i">
+			<ul class="bot_u">
+								<li ><a href="../celeb.m.aili.com/mingxingku_pic/983868.html@tpl=default&image" title="近日，因《金玉良缘》、《左手亲情右手爱》双剧热播而人气高涨的青年演员黄明，曝光了一组暗黑概念写真大片，一直以阳光少年形象深入人心的他，一反常态的着深V装，眼神迷离，吞云吐雾，展现了不为人知的熟男另一面。"><img src="http://img34.aili.com/201409/05/140988749554092d07a072e_RsT_186_120.jpg" /></a></li>
+								<li class="bot_lm"><a href="../celeb.m.aili.com/mingxingku_pic/983868.html@tpl=default&image" title="黄明暗黑概念写真曝光 阳光少年变身熟男(2)"><img src="http://img34.aili.com/201409/05/140988749654092d08a648f_RsT_186_120.jpg" /></a></li>
+								<li  class="tLie"><a href="../celeb.m.aili.com/mingxingku_pic/983868.html@tpl=default&image" title="黄明暗黑概念写真曝光 阳光少年变身熟男(3)"><img src="http://img34.aili.com/201409/05/140988749854092d0a01410_RsT_186_120.jpg" /></a></li>
+							</ul>
+		</div>
+			</div>
+    <div id="paiList">
+    </div>
+    <div id="pullUp">
+        <span class="pullUpLabel">向上拖动显示下20条</span>
+        <p class="pullUpLabela" style="display:none;"><img src="http://img1.aili.com/201405/06/1399367205_65005300.gif"><span>正在载入</span></p>
+    </div>
+ <script type="text/javascript">
+	$(function(){
+		 function dropNav(){
+	var $btn=$(".arr"),
+		$Mn=$(".nav_u_down"),
+		$true=true;
+		$Mn.fadeOut();	
+		
+	  $btn.bind("click",function (e){
+		if($true){
+			$Mn.fadeIn();
+			$(".nav_box").addClass("nav_box1");
+			$true=false;
+		}else{
+			$Mn.fadeOut();
+			$(".nav_box").removeClass("nav_box1");
+			$true=true;
+		}
+		e.preventDefault();
+		return false;
+	});
+	$Mn.bind("click" ,function (e){
+		$Mn.fadeIn();
+		$(".nav_box").addClass("nav_box1");
+		$true=false;
+		e.stopPropagation();
+	});
+	$(document).bind("click" ,function (){
+		$Mn.fadeOut();
+		$(".nav_box").removeClass("nav_box1");
+		$true=true;
+	});
+};
+
+$(function (){
+	dropNav();	
+});
+ 
+		})
+</script>   
+ <!--<script type="text/javascript" src="http://js.aili.com/app/iscroll.js"></script>
+<script type="text/javascript">
+var myScroll;
+var myScroll0;
+function loaded() {
+    myScroll = new iScroll('wrapper1', { vScrollbar: true});
+	myScroll0 = new iScroll('wrapper0', { vScrollbar: false,hScrollbar:false});
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+/* * * * * * * *
+ *
+ * Use this for high compatibility (iDevice + Android)
+ *
+ */
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+</script> --> 
+<div class="tGoto">
+	<a href="../app.aili.com/default.htm">安装客户端</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../www.aili.com/@url=diannao">访问电脑版</a>
+</div>
+<div class="footer txtsha1">
+ <p>Copyright &copy; 2012 Aili.com. All Rights Reserved.</p>
+ <p>京ICP备11010888</p>
+</div>
+<script type="text/javascript" src="js/app/index.js"></script>
+ <script src='../w.cnzz.com/c.php@id=30020763' language='JavaScript' charset='gb2312'></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffe36848c95d4dd115ec835202af63f4d' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+</body>
+</html>

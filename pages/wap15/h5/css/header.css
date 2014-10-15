@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+.header{background:#321d55;width:100%;height:88px;}
+.header h2,.header h1{height:88px;width:100%;overflow:hidden;color:#fff;line-height:44px;text-shadow: 0 0 1px #ccc;background:url(bgimages/logo_H5_03.gif) no-repeat center 20px;}
+.header .fl{position:relative;width:72px;height:47px;padding:0;margin-left:0px;top:20px;}
+.header .fl:hover{background:url(bgimages/prve_bg.png) repeat-x 0 0;}
+.header .fl div{width:23px;height:43px; position:relative;left:30px;}
+.header .fl div img{position: absolute;top:2px;}
+.header .fr{position:relative;width:42px;}
+.header img{left:0;top:20px;}
+#response_ans p{overflow:hidden;}
+#response_ans p.ph{height: 40px}
+#response_ans p a{margin-right:25px;}
+#response_ans ul{height:30px;line-height:30px;cursor:pointer;width:150px;}
+@media only screen
+and (min-width : 320px)
+and (max-width : 639px) {
+    .header{background:#321d55;width:100%;height:44px;}
+    .header h2,.header h1{height:44px;width:100%;overflow:hidden;color:#fff;line-height:44px;text-shadow: 0 0 1px #ccc;background:url(bgimages/logo_H5_04.gif) no-repeat center;}
+    .header .fl{position:relative;width:37px;height:24px;padding:0;margin-left:0px;top:10px;}
+    .header .fl:hover{background:url(bgimages/prve_bg.png) repeat-x 0 0;background-size:36px 24px;}
+    .header .fl div{width:12px;height:22px; position:relative;left:15px;}
+    .header .fl div img{position: absolute;top:1px;}
+    .header .fr{position:relative;width:21px;height:44px;}
+    .header img{left:0;top:10px;position:absolute;width:100%;}
+    #response_ans p{overflow:hidden;}
+    #response_ans p.ph{height: 24px}
+    #response_ans p a{margin-right:13px;}
+    #response_ans ul{height:15px;line-height:15px;cursor:pointer;width:60px;}
+}
